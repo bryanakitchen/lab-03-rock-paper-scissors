@@ -1,7 +1,6 @@
 // import functions and grab DOM elements
-import { getRandomThrow } from './get-random-throw.js';
+import { getRandomThrow, userWins } from './get-random-throw.js';
 
-const checkedRadioButton = document.querySelector(':checked');
 const playButton = document.querySelector('#playButton');
 const winSpan = document.querySelector('#wins');
 const lossSpan = document.querySelector('#losses');
@@ -16,13 +15,26 @@ let draws = 0;
 
 // set event listeners to update state and DOM
 playButton.addEventListener('click', () => {
-     const randomNumber = getRandomThrow();
-     
-});
+    // pulling the computer generated guess
+    const randomGuess = getRandomThrow();
+    // pulling the user selection upon click and turning into var.
+    const checkedRadioButton = document.querySelector(':checked');
+    const userGuess = checkedRadioButton.value;
 
-// checkedRadioButton.value - console log it out
-// store that as the userGuess.
+    if (userWins(userGuess, randomGuess) === true) {
+        wins++;
+        winSpan.textContent = wins;
+    } else if (userWins(userGuess, randomGuess) === false) {
+        losses++;
+        lossSpan.textContent = losses;
+    } else if (randomGuess === userGuess) {
+        draws++;
+        drawSpan.textContent = draws;
+    } 
+    console.log(randomGuess);
+});
 // do if statement comparing userGuess to computerChoice.
+
 resetButton.addEventListener('click', () => {
     console.log(resetButton);
 });
