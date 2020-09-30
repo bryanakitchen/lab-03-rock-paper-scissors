@@ -59,6 +59,15 @@ header {
     box-shadow: var(--shadow);
 }
 
+input[type="radio"]:checked + img {
+    border: solid 2px blue;
+    border-radius: 30px;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
 footer {
     display: flex;
     justify-content: flex-end;

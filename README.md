@@ -19,34 +19,35 @@ How do we show the state?
 
 ### HTML Elements 
 
-State changers
+_State Changers_
 
-    - Radio button (with images)
-    - submit button
-State viewers
+- Radio button (with images)
+- submit button
 
-    - win span
-    - loss span
-    - draw span
-    - total span
-    - message span?
+_State Viewers_
+
+- win span
+- loss span
+- draw span
+- total span
+- message span?
 
 How and when do we change the state?
 - when user makes a selection and clicks the 'call it' button
     - on click:
-        - If user beat computer:
+        - If user beats computer:
             - increment the wins and increment total
-        - If user lost to computer:
+        - If user loses to computer:
             - increment loss,
             - increment the total.
         - If user tied the computer:
             - increment the total
 
-### BJK Notes
+### BJK Notes - For Sudo Coding
 
 In HTML: divs with spans that have IDs. (Add percent?).
 Submit button. 
-Input type='radio' * 3.  GROUP the inputs by naming them - name='options'. value='rock' etc. 
+Input type='radio' * 3.  GROUP the inputs by naming them - name='options'. value='rock' etc.  put label elements around the radio buttons. img tag after input tag.  type CHECK into input tag.
 
 In JS: grab DOM elements - buttons, rock, paper, scissors.
 (log this out and check) 
@@ -59,6 +60,11 @@ __Math.ceil(Math.random() * 3)__
  Determine which one is checked. document.querySelector(); pass via # or .
 
 In CSS: checked radio button change to image.
+style the image.
+input[type='radio']:checked + img { transform: scale(), }
+input[type='radio] {
+display: none;
+}
 
 const checkedRadioButton = document.querySelector(':checked');
 
