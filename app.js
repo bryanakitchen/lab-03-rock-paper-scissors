@@ -5,7 +5,7 @@ const playButton = document.querySelector('#playButton');
 const winSpan = document.querySelector('#wins');
 const lossSpan = document.querySelector('#losses');
 const drawSpan = document.querySelector('#draws');
-const percent = document.querySelector('#percentage');
+// const percentSpan = document.querySelector('#percentage');
 const resetButton = document.querySelector('#resetButton');
 
 // Initialize state - wins is 0, losses 0, ties 0, ... 
@@ -21,20 +21,23 @@ playButton.addEventListener('click', () => {
     const checkedRadioButton = document.querySelector(':checked');
     const userGuess = checkedRadioButton.value;
 
-    if (userWins(userGuess, randomGuess) === true) {
+    let total = wins + losses;
+
+    if (userGuess === randomGuess) {
+        draws++;
+        drawSpan.textContent = draws;
+        // percentSpan.textContent = `${(wins / total) * 100}%`;
+    } else if (userWins(userGuess, randomGuess) === true) {
         wins++;
         winSpan.textContent = wins;
+        // percentSpan.textContent = `${(wins / total) * 100}%`;
     } else if (userWins(userGuess, randomGuess) === false) {
         losses++;
         lossSpan.textContent = losses;
-    } else if (randomGuess === userGuess) {
-        draws++;
-        drawSpan.textContent = draws;
+        // percentSpan.textContent = `${(wins / total) * 100}%`;
     } 
-    console.log(randomGuess);
 });
-// do if statement comparing userGuess to computerChoice.
 
 resetButton.addEventListener('click', () => {
-    console.log(resetButton);
+
 });

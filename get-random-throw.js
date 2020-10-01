@@ -15,11 +15,15 @@ export function getRandomThrow() {
 }
 
 export function userWins(userGuess, computerChoice) {
-    if (userGuess === 'rock' && computerChoice === 'paper') {
-        return true;
+    if (userGuess === 'rock' && computerChoice === 'rock') {
+        return false;
+    } else if (userGuess === 'rock' && computerChoice === 'paper') {
+        return false;
     } else if (userGuess === 'rock' && computerChoice === 'scissors') {
         return true;
     } else if (userGuess === 'paper' && computerChoice === 'rock') {
+        return true;
+    } else if (userGuess === 'paper' && computerChoice === 'paper') {
         return false;
     } else if (userGuess === 'paper' && computerChoice === 'scissors') {
         return false;
@@ -27,5 +31,7 @@ export function userWins(userGuess, computerChoice) {
         return false;
     } else if (userGuess === 'scissors' && computerChoice === 'paper') {
         return true;
+    } else if (userGuess === 'scissors' && computerChoice === 'scissors') {
+        return false;
     } 
 }
