@@ -7,7 +7,6 @@ const lossSpan = document.querySelector('#losses');
 const drawSpan = document.querySelector('#draws');
 const percentSpan = document.querySelector('#percentage');
 const resetButton = document.querySelector('#resetButton');
-console.log(resetButton)
 // Initialize state - wins is 0, losses 0, ties 0, ... 
 let wins = 0;
 let losses = 0;
@@ -37,7 +36,6 @@ playButton.addEventListener('click', () => {
     
     let winning = (wins / total) * 100;
     percent = Math.round(winning);
-    console.log(wins, losses, draws, total, percent)
     percentSpan.textContent = `${percent}%`;
 });
 
